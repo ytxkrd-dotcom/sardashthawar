@@ -1,1 +1,240 @@
-hello.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sardasht Hawar | Personal Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: url('image/4.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    body * { position: relative; z-index: 2; }
+
+    header, section, footer {
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(5px);
+      border-radius: 1rem;
+      margin: 1rem auto;
+      max-width: 1200px;
+      padding: 2rem;
+    }
+
+    .typing {
+      overflow: hidden;
+      border-right: .15em solid #fff;
+      white-space: nowrap;
+      letter-spacing: .1em;
+      animation: typing 4s steps(30,end), blink-caret 0.75s step-end infinite;
+    }
+    @keyframes typing { from { width:0 } to { width:100% } }
+    @keyframes blink-caret { from,to { border-color: transparent } 50% { border-color: white; } }
+
+    .card-hover {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .card-hover:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+    }
+
+    .fade-in { animation: fadeIn 1s ease-in-out both; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+    a { color: #60a5fa; } 
+    a:hover { color: #93c5fd; }
+
+    /* Mobile Menu */
+    #menu { transition: max-height 0.3s ease-in-out; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="shadow-md sticky top-0 z-50">
+    <div class="flex flex-wrap items-center justify-between">
+      <a href="#home" class="text-2xl font-bold text-blue-400 hover:text-blue-300">Sardasht Hawar</a>
+      <button id="menu-btn" class="md:hidden text-blue-400 focus:outline-none text-3xl">☰</button>
+      <nav id="menu" class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-lg font-medium text-center md:text-left mt-2 md:mt-0">
+        <a href="#home" class="hover:text-blue-300">Home</a>
+        <a href="#gallery" class="hover:text-blue-300">Gallery</a>
+        <a href="#struggle" class="hover:text-blue-300">Struggle-We-Share</a>
+        <a href="#mystory" class="hover:text-blue-300">My Story</a>
+        <a href="#truth" class="hover:text-blue-300">Truth</a>
+        <a href="#contact" class="hover:text-blue-300">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- Home -->
+  <section id="home" class="text-center py-16 fade-in">
+    <h2 class="text-4xl md:text-5xl font-bold text-blue-300 mb-4 typing">Voice for the Silenced</h2>
+    <p class="text-lg max-w-2xl mx-auto text-gray-200 mb-10">
+      Documenting oppression and honouring those silenced by the Iranian regime through personal stories and truth.
+    </p>
+    <div class="flex justify-center">
+      <img src="image/banner.png" alt="Banner" class="rounded-3xl border-4 border-blue-400 shadow-lg max-w-sm w-full card-hover">
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="fade-in">
+    <h2 class="text-3xl font-bold text-center text-blue-300 mb-4">Our Mission</h2>
+    <p class="text-gray-200 max-w-3xl mx-auto mb-8 text-center">
+      A platform for truth — exposing the crimes of the Iranian regime, preserving the voices of the disappeared, and standing with the Kurdish people and all those silenced by fear. We fight for justice, memory, and the freedom to speak without punishment.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <img src="image/1.png" class="rounded-xl card-hover shadow-lg w-full object-cover" alt="">
+      <img src="image/2.png" class="rounded-xl card-hover shadow-lg w-full object-cover" alt="">
+      <img src="image/3.png" class="rounded-xl card-hover shadow-lg w-full object-cover" alt="">
+      <img src="image/4.png" class="rounded-xl card-hover shadow-lg w-full object-cover" alt="">
+      <img src="image/5.png" class="rounded-xl card-hover shadow-lg w-full object-cover" alt="">
+      <img src="image/6.png" class="rounded-xl card-hover shadow-lg w-full object-cover" alt="">
+    </div>
+  </section>
+
+  <!-- Struggle-We-Share -->
+  <section id="struggle" class="fade-in">
+    <h2 class="text-3xl font-bold text-blue-300 mb-6 text-center">Struggle-We-Share</h2>
+    <div class="max-w-4xl mx-auto space-y-6">
+
+      <!-- Kurdish Voices -->
+      <div class="space-y-3">
+        <h3 class="text-2xl font-semibold text-blue-300">Kurdish Voices Silenced</h3>
+        <p class="text-gray-200">Exposing the brutal oppression of Kurdish identity by the Iranian regime through language, arrests, and executions.</p>
+
+        <h3 class="text-xl font-semibold text-blue-300">Kurdish Voices Silenced: A Call</h3>
+        <p class="text-gray-200">I expose the Iranian regime's oppression of Kurdish people, highlighting banned language, arrests, and executions. Their identity is criminalised, yet resilience and resistance endure among the Kurdish community.</p>
+      </div>
+
+      <!-- My Mission & Vision -->
+      <div class="grid md:grid-cols-2 gap-6 items-center">
+        <div class="space-y-2">
+          <h3 class="text-xl font-semibold text-blue-300">My Mission</h3>
+          <p class="text-gray-200">I stand against the silencing of Kurdish voices, advocating for justice and remembrance. The struggle continues, and the spirit of the Kurdish people remains unbroken despite the regime's brutality.</p>
+          <h3 class="text-xl font-semibold text-blue-300">My Vision</h3>
+          <p class="text-gray-200">Our culture, language, and identity will endure and be remembered. We continue to resist fear and oppression with resilience and solidarity.</p>
+        </div>
+        <div>
+          <img src="image/14.png" alt="Mission Vision" class="rounded-xl shadow-lg card-hover w-full object-cover">
+        </div>
+      </div>
+
+      <!-- Silenced Voices -->
+      <div class="grid md:grid-cols-2 gap-6 items-center">
+        <div>
+          <img src="image/16.png" alt="Silenced Voices" class="rounded-xl shadow-lg card-hover w-full object-cover">
+        </div>
+        <div class="space-y-2">
+          <h3 class="text-xl font-semibold text-blue-300">Silenced Voices</h3>
+          <p class="text-gray-200">For decades, the Iranian regime has treated Kurdish identity like a threat. Speaking Kurdish in schools is banned. Our culture is erased, our voices ignored. Writers, poets, and teachers are arrested simply for using their language. This isn’t just censorship, it’s an attempt to destroy who we are. But even in silence, we remember. Even in fear, we speak.</p>
+        </div>
+      </div>
+
+      <!-- Human Rights -->
+      <div class="grid md:grid-cols-2 gap-6 items-center">
+        <div class="space-y-2">
+          <h3 class="text-xl font-semibold text-blue-300">Human Rights</h3>
+          <p class="text-gray-200">Kurds in Iran have faced systematic human rights violations for decades. Peaceful activists are arrested without trial. Some are tortured. Others simply vanish, taken in the night and never seen again. Many have been executed for nothing more than demanding dignity. These are not isolated cases. This is a pattern. A policy. A silence enforced through fear. And it continues today. Documenting these abuses is not just about justice, it’s about refusing to let these stories disappear.</p>
+        </div>
+        <div>
+          <img src="image/17.png" alt="Human Rights" class="rounded-xl shadow-lg card-hover w-full object-cover">
+        </div>
+      </div>
+
+      <!-- Cultural Erasure -->
+      <div class="grid md:grid-cols-2 gap-6 items-center">
+        <div>
+          <img src="image/4.png" alt="Cultural Erasure" class="rounded-xl shadow-lg card-hover w-full object-cover">
+        </div>
+        <div class="space-y-2">
+          <h3 class="text-xl font-semibold text-blue-300">Cultural Erasure</h3>
+          <p class="text-gray-200">In Iran, simply being Kurdish can make you a target. The government has spent decades trying to erase Kurdish identity, banning our language in schools, silencing our writers, destroying cultural events, and censoring even our songs. Wearing traditional clothes, speaking Sorani, or carrying a Kurdish flag can be seen as a threat. Our culture is not allowed to grow; it is punished. But despite every attempt to erase us, we continue to speak, remember, and resist.</p>
+        </div>
+      </div>
+
+      <!-- Resilience -->
+      <div class="grid md:grid-cols-2 gap-6 items-center">
+        <div class="space-y-2">
+          <h3 class="text-xl font-semibold text-blue-300">Resilience</h3>
+          <p class="text-gray-200">Despite decades of persecution, the Kurdish people have never stopped resisting. Our songs are still sung. Our language is still spoken. Our history is still told, even in whispers. In the face of arrests, executions, and exile, Kurds continue to hold on to who we are. We honour those we’ve lost, stand for those who can’t speak, and protect the culture others tried to erase. Our resilience is not just survival — it is strength.</p>
+        </div>
+        <div>
+          <img src="image/5.png" alt="Resilience" class="rounded-xl shadow-lg card-hover w-full object-cover">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- My Story -->
+  <section id="mystory" class="fade-in">
+    <h2 class="text-3xl font-bold text-blue-300 mb-6 text-center">The Mountain Still Lives in Me</h2>
+    <div class="text-left text-gray-100 leading-relaxed space-y-4 max-w-3xl mx-auto">
+      <p>I was seven years old when, for the first time, I ascended the small hill behind my grandfather's house in Baneh...</p>
+      <p>I did not leave Iran voluntarily. I was pushed out, not in terms of fear, but in terms of certainty...</p>
+      <p>I have lived in the United Kingdom since 2016. Year by year, I've adapted to what's here...</p>
+      <p>That’s not speculation — that’s the reality for ethnic minorities and political activists in Iran...</p>
+      <p>I do not write with anger or bitterness. My wish is only for my words and existence to be understood...</p>
+      <p>I have built my existence in the UK, not for comfort, but because there was no alternative...</p>
+      <p>I will not go back into the mountains of my childhood. I have accepted this...</p>
+    </div>
+  </section>
+
+  <!-- Truth Section -->
+  <section id="truth" class="fade-in">
+    <h2 class="text-3xl font-bold text-blue-300 mb-6 text-center">Why I Speak</h2>
+    <div class="grid md:grid-cols-2 gap-6 items-center max-w-5xl mx-auto">
+      <div class="text-gray-100 leading-relaxed space-y-4">
+        <p>I did not learn freedom of expression as a child. Silence was the preferred option for a Kurd in Iran...</p>
+        <p>I am now speaking because previously, I couldn’t...</p>
+        <p>I am not a politician nor an activist. I am simply a person who has had to abandon everything...</p>
+        <p>Since I arrived in the UK, I've attempted to rebuild my life. But the memories do not fade...</p>
+        <p>I speak because others are unable. And since I am able, I feel compelled.</p>
+      </div>
+      <div class="flex justify-center">
+        <img src="image/18.png" alt="Truth Image" class="rounded-xl shadow-lg card-hover w-full max-w-md object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="fade-in text-center">
+    <h2 class="text-3xl font-bold text-blue-300 mb-4">Contact Me</h2>
+    <p class="text-gray-200 mb-4">I’d love to hear from you!</p>
+    <a href="tel:+447718490568" class="text-xl text-blue-400 hover:text-blue-200 block mb-2">📞 +44 7718 490568</a>
+    <a href="mailto:Gyanh5524@gmail.com" class="text-xl text-blue-400 hover:text-blue-200 block mb-2">✉️ Gyanh5524@gmail.com</a>
+    <a href="https://www.facebook.com/sardasht.hawar" target="_blank" class="text-xl text-blue-400 hover:text-blue-200 inline-block">💬 Facebook</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 text-gray-300 text-sm">
+    © 2025 <a href="https://www.facebook.com/sardasht.hawar" class="hover:underline text-blue-400">Sardasht Hawar</a>. All rights reserved.
+  </footer>
+
+</body>
+</html>
